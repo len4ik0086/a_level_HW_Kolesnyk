@@ -9,17 +9,19 @@ import java.util.Scanner;
 public class Task3 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Введите слова");
+        System.out.println("Введите слова:");
         String input = scan.nextLine();
         System.out.println("Вы ввели " + countWord(input) + " слова");
 
     }
+
     public static int countWord(String input) {
+        String trimInput = input.replaceAll("[\\s]{2,}", " ");
         int count = 0;
-        if(input.length() != 0){
+        if (trimInput.length() != 0) {
             count++;
-            for (int i = 0; i < input.length(); i++) {
-                if(input.charAt(i) == ' '){
+            for (int i = 0; i < trimInput.length(); i++) {
+                if (trimInput.charAt(i) == ' ') {
                     count++;
                 }
             }

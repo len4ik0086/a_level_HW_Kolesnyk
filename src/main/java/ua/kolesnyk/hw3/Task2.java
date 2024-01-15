@@ -10,25 +10,22 @@ public class Task2 {
         Scanner scan = new Scanner(System.in);
         System.out.print ("Введите значение: ");
         String a = scan.nextLine();
-        if (IsPalindrome(a)) {
+        if (isPalindrome(a)) {
             System.out.println("Введенное значение Палиндром");
         }else{
             System.out.println("Введенное значение не является Палиндромом");
         }
     }
 
-    public static String SpaceReplaceAll(String a) {
+    public static String replaceAllSpaces(String a) {
         String ta = a.replaceAll(" ", "");
         return ta;
     }
 
-    public static boolean IsPalindrome(String ta) {
+    public static boolean isPalindrome(String ta) {
         StringBuffer temp = new StringBuffer(ta);
         temp.reverse();
         String rta = temp.toString();
-        if (rta.equals(ta)){
-            return true;
-        } else {
-            return false;}
+        return rta.equals(ta);
     }
 }
