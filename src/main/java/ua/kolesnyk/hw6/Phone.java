@@ -47,6 +47,7 @@ public class Phone {
         this.model = "";
         this.weight = 0.0;
     }
+
     //и) Добавить в класс Phone методы: receiveCall, имеет один параметр
     //– имя звонящего. Выводит на консоль сообщение “Звонит {name}”.
     public void receiveCall(String callerName) {
