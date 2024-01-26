@@ -24,12 +24,10 @@ public class Task3 {
         System.out.print("Input array size in case NxN: ");
         int input = scanner.nextInt();
         int[][] originalArray = fillArray(input);
-        System.out.println("Original  array : " + Arrays.deepToString(originalArray));
-        int[][] copiedArray = copyArray(input, originalArray);
-        System.out.println("Copied   array  : " + Arrays.deepToString(copiedArray));
-        swapRowsAndColumns(copiedArray);
+        System.out.println("Original   array: " + Arrays.deepToString(originalArray));
+        int[][] copiedArray = swapRowsAndColumns(originalArray);
         System.out.println("Transposed array: " + Arrays.deepToString(copiedArray));
-        System.out.println("Original  array : " + Arrays.deepToString(originalArray));
+        System.out.println("Original   array: " + Arrays.deepToString(originalArray));
     }
 
     public static int[][] fillArray(int input) {
@@ -42,26 +40,28 @@ public class Task3 {
         return array;
     }
 
-    public static int[][] copyArray(int input, int[][] array) {
-        int[][] copy = new int[input][input];
-        for (int i = 0; i < input; i++) {
-            for (int j = 0; j < input; j++) {
+    public static int[][] copyArray(int[][] array) {
+        int[][] copy = new int[array.length][array[0].length];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
                 copy[i][j] = array[i][j];
             }
         }
         return copy;
     }
 
-    public static void swapRowsAndColumns(int[][] copy) {
-        int rows = copy.length;
-        int cols = copy[0].length;
+    public static int[][] swapRowsAndColumns(int[][] originalArray) {
+        int[][] copiedArray = copyArray(originalArray);
+        System.out.println("Copied     array: " + Arrays.deepToString(copiedArray));
+        int rows = copiedArray.length;
+        int cols = copiedArray[0].length;
         for (int i = 0; i < rows; i++) {
             for (int j = i + 1; j < cols; j++) {
-                int temp = copy[i][j];
-                copy[i][j] = copy[j][i];
-                copy[j][i] = temp;
+                int temp = copiedArray[i][j];
+                copiedArray[i][j] = copiedArray[j][i];
+                copiedArray[j][i] = temp;
             }
         }
+        return copiedArray;
     }
-
 }

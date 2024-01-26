@@ -10,12 +10,10 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Task3 {
     public static void main(String[] args) {
         int[] originalArray = fillArray();
-        System.out.println("Original  array : " + Arrays.toString(originalArray));
-        int[] copiedArray = Arrays.copyOf(originalArray, originalArray.length);
-        System.out.println("Copied    array : " + Arrays.toString(copiedArray));
-        replaceEvenToZero(copiedArray);
-        System.out.println("Even -> 0 array : " + Arrays.toString(copiedArray));
-        System.out.println("Original  array : " + Arrays.toString(originalArray));
+        System.out.println("Original array : " + Arrays.toString(originalArray));
+        int[] copiedArray = replaceEvenToZero(originalArray);
+        System.out.println("Even -> 0 array: " + Arrays.toString(copiedArray));
+        System.out.println("Original array : " + Arrays.toString(originalArray));
     }
 
     public static int[] fillArray() {
@@ -26,12 +24,15 @@ public class Task3 {
         return array;
     }
 
-    public static void replaceEvenToZero(int[] copy) {
-        for (int i = 0; i < copy.length; i++) {
-            if (copy[i] % 2 == 0) {
-                copy[i] = 0;
+    public static int[] replaceEvenToZero(int[] originalArray) {
+        int[] copiedArray = Arrays.copyOf(originalArray, originalArray.length);
+        System.out.println("Copied  array  : " + Arrays.toString(copiedArray));
+
+        for (int i = 0; i < copiedArray.length; i++) {
+            if (copiedArray[i] % 2 == 0) {
+                copiedArray[i] = 0;
             }
         }
+        return copiedArray;
     }
-
 }
