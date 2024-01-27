@@ -94,7 +94,8 @@ public class Vector {
         System.out.println("Vector A: (" + vectorA.x + ", " + vectorA.y + ", " + vectorA.z + ")");
         System.out.println("Vector B: (" + vectorB.x + ", " + vectorB.y + ", " + vectorB.z + ")");
         System.out.println("Length of vector A: " + vectorA.calculateLength());
-        System.out.println("Cross product of A and B: " + vectorA.calculateCrossProduct(vectorB));
+        System.out.println("Cross product of A and B: (" + vectorA.calculateCrossProduct(vectorB).x + ", " +
+                vectorA.calculateCrossProduct(vectorB).y + ", " + vectorA.calculateCrossProduct(vectorB).z + ")");
         System.out.println("Cosine angle between A and B: " + vectorA.calculateCosineAngle(vectorB));
         System.out.println("Sum of A and B: (" + vectorA.add(vectorB).x + ", " + vectorA.add(vectorB).y + ", " + vectorA.add(vectorB).z + ")");
         System.out.println("Difference of A and B: (" + vectorA.subtract(vectorB).x + ", " + vectorA.subtract(vectorB).y + ", " + vectorA.subtract(vectorB).z + ")");
