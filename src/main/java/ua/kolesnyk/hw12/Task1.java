@@ -31,14 +31,18 @@ public class Task1 {
                     "● Если ввели end, то программа завершается");
 
             String line;
+            boolean firstWordWritten = false;
             while (!(line = scanner.nextLine()).equals("end")) {
                 if (line.equals("next")) {
                     writer.newLine();
+                    firstWordWritten = false;
                 } else {
-                    writer.write(line);
-                    if (!line.isEmpty()) {
+                    if (firstWordWritten) {
                         writer.write(", ");
+                    } else {
+                        firstWordWritten = true;
                     }
+                    writer.write(line);
                 }
             }
 
