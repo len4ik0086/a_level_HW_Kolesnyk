@@ -19,7 +19,6 @@ package ua.kolesnyk.hw13;
 //}
 
 import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -44,64 +43,5 @@ public class GsonReader {
 
     private static String sanitizeJson(String json) {
         return json.replace("“", "\"").replace("”", "\"");
-    }
-}
-
-class Box {
-    @SerializedName("from")
-    private String origin;
-    @SerializedName("material")
-    private String material;
-    @SerializedName("color")
-    private String color;
-    @SerializedName("max-lifting-capacity")
-    private Capacity maxLiftingCapacity;
-    @SerializedName("cargo")
-    private Cargo cargo;
-    @SerializedName("delivery-date")
-    private String deliveryDate;
-
-    @Override
-    public String toString() {
-        return "Box{" +
-                "from='" + origin + '\'' +
-                ", material='" + material + '\'' +
-                ", color='" + color + '\'' +
-                ", maxLiftingCapacity=" + maxLiftingCapacity +
-                ", cargo=" + cargo +
-                ", deliveryDate=" + deliveryDate +
-                '}';
-    }
-}
-
-class Capacity {
-    @SerializedName("unit")
-    private String unit;
-
-    @SerializedName("value")
-    private int value;
-
-    @Override
-    public String toString() {
-        return "{" +
-                "unit='" + unit + '\'' +
-                ", value=" + value +
-                '}';
-    }
-}
-
-class Cargo {
-    @SerializedName("name")
-    private String name;
-
-    @SerializedName("class")
-    private String cargoClass;
-
-    @Override
-    public String toString() {
-        return "{" +
-                "name='" + name + '\'' +
-                ", cargoClass='" + cargoClass + '\'' +
-                '}';
     }
 }
