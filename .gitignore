@@ -15,7 +15,7 @@ src/main/java/org/example
 *.ipr
 /target
 /.idea
-pom.xml
+
 README.md
 IdeaProjects.iml
 
